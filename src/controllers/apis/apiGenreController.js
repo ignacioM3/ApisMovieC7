@@ -4,25 +4,27 @@ const getUrl = (req) => req.protocol + '://' + req.get('host') + req.originalUrl
 const getBaseUrl = (req) => req.protocol + '://' + req.get('host');
 
 module.exports = {
-    getAllGenres: (req, res) =>{
+    getAllGenres: (req, res)=> {
         db.Genre.findAll({
             include: [{association: "movies"}]
         })
-        .then(genres => res.json({
+        .then(genres => {
+            return res.json({
             meta: {
                 link: getUrl(req),
                 status: 200,
                 total: genres.length
             },
             data: genres
-        }))
+        })}
+        )
     },
-    getOneGenres: (req, res) =>{
+    getOneGenre: (req, res)=> {
         db.Genre.findOne({
-            where :{
+            where: {
                 id: req.params.id
             },
-            include:[{association: "movies"}]
+            include: [{association: "movies"}]
         })
         .then(genre => {
             return res.status(200).json({

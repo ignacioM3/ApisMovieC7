@@ -11,42 +11,42 @@ module.exports = (sequelize, dataTypes) => {
         first_name: {
             type: dataTypes.STRING(100),
             allowNull: false,
-            validate:{
+            validate: {
                 notNull: {
                     args: true,
                     msg: "The field first_name can not be null"
                 },
                 notEmpty: {
                     args: true,
-                    msg: "Write the name "
+                    msg: "Write the name"
                 }
             }
         },
         last_name: {
             type: dataTypes.STRING(100),
             allowNull: false,
-            validate:{
+            validate: {
                 notNull: {
                     args: true,
                     msg: "The field last_name can not be null"
                 },
                 notEmpty: {
                     args: true,
-                    msg: "Write the last name "
+                    msg: "Write the last_name"
                 }
             }
         },
         rating: {
             type: dataTypes.DECIMAL(3,1),
             allowNull: false,
-            validate:{
+            validate: {
                 notNull: {
                     args: true,
                     msg: "The field rating can not be null"
                 },
                 notEmpty: {
                     args: true,
-                    msg: "Write the rating "
+                    msg: "Write the rating"
                 }
             }
         },

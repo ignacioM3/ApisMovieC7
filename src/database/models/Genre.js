@@ -14,14 +14,14 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING(100),
             allowNull: false,
-            validate:{
+            validate: {
                 notNull: {
                     args: true,
                     msg: "The field name can not be null"
                 },
                 notEmpty: {
                     args: true,
-                    msg: "Write the name "
+                    msg: "Write the name"
                 }
             }
         },
@@ -35,14 +35,14 @@ module.exports = (sequelize, dataTypes) => {
             validate: {
                 notNull: {
                     args: true,
-                    msg: "Rating can not be null"
-                }
+                    msg: "Ranking can not be null"
+                },
             }
+
         },
         active: {
             type: dataTypes.BOOLEAN,
-            allowNull: false,
-            
+            allowNull: false
         }
     };
     let config = {
